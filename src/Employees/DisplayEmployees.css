@@ -1,0 +1,32 @@
+ .Employee_display {
+  display: flex;
+  flex-direction: row;
+  
+} 
+.Display_Employee {
+    padding: 10px;
+  }
+
+.Display_Employee > div {
+    border-radius: 60px 60px 0px 0px;
+    height: 450px;
+}
+.card-img-top {
+    height: 200px;
+    border-radius: 60px 0px;
+}
+.card_footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+.btn-primary {
+    margin: 5px 5px 5px 0px;
+    width: 250px;
+}
+.btn-danger {
+    margin: 5px 5px 10px 0px;
+    width: 250px;
+}
+
+  
