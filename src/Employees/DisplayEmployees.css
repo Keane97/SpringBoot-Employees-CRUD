@@ -1,19 +1,20 @@
  .Employee_display {
   display: flex;
   flex-direction: row;
-  
+  overflow: auto;
 } 
 .Display_Employee {
     padding: 10px;
   }
 
 .Display_Employee > div {
-    border-radius: 60px 60px 0px 0px;
+    border-radius: 60px 60px 10px 10px;
     height: 450px;
+    background-color: rgb(238, 238, 249);
 }
 .card-img-top {
     height: 200px;
-    border-radius: 60px 0px;
+    border-radius: 60px 10px 60px 0px;
 }
 .card_footer {
     position: absolute;
@@ -29,4 +30,25 @@
     width: 250px;
 }
 
-  
+.card-text {
+    text-overflow: ellipsis;
+}
+
+.new_Employee{
+    margin: 10px 10px 10px 50px;
+    padding: 20px;
+    border-radius: 10px;
+    height: 450px;
+    display: grid;
+    place-items: center;
+}
+
+.add_svg{
+    background-color:rgb(213, 213, 226);
+    margin: 10px;
+    display: grid;
+    place-items: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 150px;
+}
