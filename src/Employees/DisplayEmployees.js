@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { FaUserPlus } from 'react-icons/fa';
 import "./DisplayEmployees.css";
@@ -11,12 +12,14 @@ import "./DisplayEmployees.css";
 function DisplayEmployees() {
 
     const [employees, getEmployees] = useState('');
+    const history = useHistory();
     const URL = 'http://localhost:8080/api/';
 
     useEffect(() => {
         getAllEmployees();
     }, [])
 
+    const newEmployeeRoute = () => history.push('/NewEmployee');
 
 
     const getAllEmployees = () => {
@@ -57,7 +60,7 @@ function DisplayEmployees() {
                                 <Card.Title>{employeeData.firstName} {employeeData.lastName}</Card.Title>
                                 <Card.Text >{employeeData.aboutMe}</Card.Text>
                                 <div className="card_footer">
-                                    <Button variant="primary" onClick={() => <Link to="Employee/6"></Link> }>Edit Employee Details</Button>
+                                    <Button variant="primary" >Edit Employee Details</Button>
                                     <Button variant="danger" >Delete Employee Details</Button>
                                 </div>
                             </Card.Body>
@@ -67,7 +70,7 @@ function DisplayEmployees() {
             }) : <h3>No data received</h3>}
             <div className="new_Employee">
                 <div className="add_svg">
-                    <FaUserPlus size={150} color='green' />  {/* "getSingleEmployeeData is a placeholder yet. This is to route the user to the "Add Employee" form page */}
+                    <button type='button' onClick={newEmployeeRoute}><FaUserPlus size={150} color='green' /></button> {/* "getSingleEmployeeData is a placeholder yet. This is to route the user to the "Add Employee" form page */}
                 </div>
 
             </div>
